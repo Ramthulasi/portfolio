@@ -70,10 +70,23 @@
 </header>
 
 <main role="main">
-<div class="container">
+<div class="container text-center">
   <h1>Welcome to Thulasi's Blog</h1>
   <br>
+ 
   <h2>Latest Posts</h2>
+  <hr>
+  <br>
+  {% for blog in blog.all %}
+  <h3> {{ blog.Title }} </h3>
+  {{ blog.pub_date.pretty }}
+  <br>
+  <img class="img-fluid" src="{{ blog.image.url }}"  height="200", width="200">
+  <br>
+  {{ blog.summary }}
+  <br>
+
+   {% endfor %}
 </div>
 </main>
 
